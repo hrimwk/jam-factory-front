@@ -5,12 +5,15 @@ const GlobalStyles = createGlobalStyle`
 
  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap'); 
 
-
   ${reset} 
 
     *{
         box-sizing: border-box;
     }
+    a {
+	text-decoration: none;
+}
+
     body{
       font-family: 'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic', sans-serif;
       font-weight: 400;
@@ -23,6 +26,9 @@ const GlobalStyles = createGlobalStyle`
     }
     input:focus {
       outline: none;
+    }
+    .d-flex{
+      display: flex;
     }
 
 `;
