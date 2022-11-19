@@ -69,12 +69,12 @@ const HeaderContainer = styled.div`
     text-align: center;
   }
   .join {
-
+    color: ${(props) => props.theme.colors.mainBrown};
     margin-right: 10px;
   }
 
   .login {
- 
+    color: ${(props) => props.theme.colors.mainBrown};
   }
 
   .login-area {
@@ -92,6 +92,7 @@ const HeaderContainer = styled.div`
     li {
       flex-grow: 1;
       text-align: center;
+      color: ${(props) => props.theme.colors.subBrown};
       cursor: pointer;
       :hover .menu-depth2 {
         display: block !important;
@@ -109,29 +110,34 @@ const HeaderContainer = styled.div`
     left: 0;
     width: 100%;
     height: 140px;
-    .sub2 {
-        position: absolute;
-        width: 100%;
-        left: 25%;
-        background: transparent;
-      }
-      .sub3 {
-        position: absolute;
-        width: 100%;
-        left: 50%;
-        background: transparent;
-      }
-      .sub4 {
-        position: absolute;
-        width: 100%;
-        left: 75%;
-        background: transparent;
-      }
-    }
     li {
-      width: 25%;
-      padding: 15px;
+      font-size: 14px;
+      :hover {
+        color: ${(props) => props.theme.colors.mainBrown};
+      }
     }
+    .sub2 {
+      position: absolute;
+      width: 100%;
+      left: 25%;
+      background: transparent;
+    }
+    .sub3 {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      background: transparent;
+    }
+    .sub4 {
+      position: absolute;
+      width: 100%;
+      left: 75%;
+      background: transparent;
+    }
+  }
+  li {
+    width: 25%;
+    padding: 15px;
   }
 `;
 
