@@ -11,12 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <ThemeProvider theme={theme} />
-      <Header />
-      <Routes>
-        <Route path="" element={<Main />}></Route>
-      </Routes>
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Routes>
+          <Route path="" element={<Main />}></Route>
+        </Routes>
+        <Footer />
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

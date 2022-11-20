@@ -1,29 +1,43 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo_1 from '../assets/images/logo_1.png';
-
+import { navList } from '../assets/utils/navList';
 function Header() {
-  const navList = [
-    { link: '/', name: 'about us', subNav: [] },
-    { link: '/', name: 'brand', subNav: [] },
-    { link: '/', name: 'product', subNav: [] },
-    { link: '/', name: 'notice', subNav: [] },
-  ];
   return (
     <>
       <HeaderContainer>
-        <div className="menu-wrap">
+        <div className="header-wrap">
           <div className="logo-area">
-            <img src={logo_1} alt="로고" />
+            <div className="logo-img">
+              <Link to="/">
+                <img src={logo_1} alt="로고" />
+              </Link>
+            </div>
           </div>
           <div className="login-area">
             <span className="join ft-12">Join</span>
             <span className="login ft-12">Login</span>
           </div>
         </div>
-        <nav id="menu">
-          <ul className="d-flex">
+        <nav className="menu-wrap">
+          <ul className="menu-depth1">
             {navList.map((data) => {
-              return <li>{data.name}</li>;
+              return (
+                <li>
+                  <Link to={data.link}>{data.name}</Link>
+                  <div className="menu-depth2">
+                    <ul className={data.class}>
+                      {data.subNav.map((nav) => {
+                        return (
+                          <li>
+                            <Link to={nav.link}>{nav.name}</Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </li>
+              );
             })}
           </ul>
         </nav>
@@ -38,32 +52,32 @@ const HeaderContainer = styled.div`
   top: 0;
   z-index: 1;
   height: 170px;
-  .ft-12 {
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 18px;
+  li {
+    width: 25%;
   }
-
-  .menu-wrap {
+  .header-wrap {
     position: relative;
     top: 0;
     left: 0;
-    background: #ebe6d7;
+    background: ${(props) => props.theme.colors.subIvory};
   }
   .logo-area {
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    .logo-img {
+      width: 170px;
+    }
   }
   .join {
-    color: rgb(123, 95, 60);
+    color: ${(props) => props.theme.colors.mainBrown};
+
     margin-right: 10px;
   }
 
   .login {
-    color: rgb(123, 95, 60);
+    color: ${(props) => props.theme.colors.mainBrown};
   }
 
   .login-area {
@@ -72,6 +86,62 @@ const HeaderContainer = styled.div`
     right: 0%;
     top: 50%;
     transform: translateY(-50%);
+  }
+  .menu-wrap {
+    .menu-depth1 {
+      display: flex;
+      justify-content: space-around;
+    }
+    li {
+      a {
+        flex-grow: 1;
+        text-align: center;
+        display: block;
+        padding: 17px;
+        flex-grow: 1;
+        text-align: center;
+        color: ${(props) => props.theme.colors.subBrown};
+        :hover {
+          color: ${(props) => props.theme.colors.mainBrown};
+        }
+      }
+      :hover .menu-depth2 {
+        display: block !important;
+      }
+    }
+  }
+  .menu-depth2 {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: #fff;
+    ul {
+      width: 100%;
+      background: transparent;
+      li {
+        a {
+          font-size: 14px;
+          color: ${(props) => props.theme.colors.subBrown};
+          :hover {
+            color: ${(props) => props.theme.colors.mainBrown};
+          }
+        }
+      }
+    }
+    .sub2 {
+      position: absolute;
+      left: 25%;
+    }
+    .sub3 {
+      position: absolute;
+      left: 50%;
+    }
+    .sub4 {
+      position: absolute;
+      left: 75%;
+    }
   }
 `;
 
