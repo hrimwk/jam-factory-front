@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
   .ft-14 {
     font-size: 14px;
   }
-    
+ 
 `;
 
 export default GlobalStyles;

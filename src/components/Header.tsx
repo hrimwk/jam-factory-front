@@ -72,6 +72,7 @@ const HeaderContainer = styled.div`
   }
   .join {
     color: ${(props) => props.theme.colors.mainBrown};
+
     margin-right: 10px;
   }
 
