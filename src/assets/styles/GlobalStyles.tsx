@@ -27,10 +27,19 @@ const GlobalStyles = createGlobalStyle`
     input:focus {
       outline: none;
     }
+    img{
+      width: 100%;
+    }
     .d-flex{
       display: flex;
     }
-
+    .ft-12 {
+    font-size: 12px;
+  }
+  .ft-14 {
+    font-size: 14px;
+  }
+    
 `;
 
 export default GlobalStyles;
