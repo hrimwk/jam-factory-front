@@ -39,7 +39,9 @@ const GlobalStyles = createGlobalStyle`
   .ft-14 {
     font-size: 14px;
   }
- 
+ .ml-10{
+  margin-left: 10px;
+ }
 `;
 
 export default GlobalStyles;
