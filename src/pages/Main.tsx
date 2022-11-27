@@ -12,6 +12,7 @@ import slide_5 from '../assets/images/slide_5.jpg';
 function Main() {
   const settings = {
     dots: true,
+    arrow: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -49,6 +50,13 @@ const MainContainer = styled.div`
   }
   .slick-dots li.slick-active button:before {
     color: ${(props) => props.theme.colors.mainBrown};
+  }
+  .slick-prev {
+    left: 10px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 10px;
   }
 `;
 
