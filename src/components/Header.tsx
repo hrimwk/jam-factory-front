@@ -7,7 +7,7 @@ import Login from './login/Login';
 import Modal from './modal/Modal';
 
 function Header() {
-  const [visible, setVisible] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(false);
   const login = <Login />;
 
   return (
