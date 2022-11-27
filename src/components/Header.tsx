@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo_1 from '../assets/images/logo_1.png';
 import { navList } from '../assets/utils/navList';
+import Login from './login/Login';
+import Modal from './modal/Modal';
+
 function Header() {
+  const [visible, setVisible] = useState<boolean>(false);
+  const login = <Login />;
+
   return (
     <>
       <HeaderContainer>
@@ -18,12 +25,13 @@ function Header() {
             <span className="join ft-12">Join</span>
             <span className="login ft-12">Login</span>
           </div>
+          <Modal visible={visible} modalIn={login} />
         </div>
         <nav className="menu-wrap">
           <ul className="menu-depth1">
             {navList.map((data) => {
               return (
-                <li>
+                <li className="level1">
                   <Link to={data.link}>{data.name}</Link>
                   <div className="menu-depth2">
                     <ul className={data.class}>
@@ -52,9 +60,7 @@ const HeaderContainer = styled.div`
   top: 0;
   z-index: 1;
   height: 170px;
-  li {
-    width: 25%;
-  }
+
   .header-wrap {
     position: relative;
     top: 0;
@@ -92,6 +98,7 @@ const HeaderContainer = styled.div`
       justify-content: space-around;
     }
     li {
+      width: 25%;
       a {
         flex-grow: 1;
         text-align: center;
