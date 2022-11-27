@@ -39,6 +39,17 @@ function Main() {
 }
 const MainContainer = styled.div`
   margin-top: 170px;
+  .slick-dots {
+    bottom: 30px;
+    z-index: 10;
+  }
+  .slick-dots li button:before {
+    color: #fff;
+    opacity: 0.5;
+  }
+  .slick-dots li.slick-active button:before {
+    color: ${(props) => props.theme.colors.mainBrown};
+  }
 `;
 
 export default Main;
