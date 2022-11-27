@@ -96,6 +96,7 @@ const HeaderContainer = styled.div`
     .menu-depth1 {
       display: flex;
       justify-content: space-around;
+      background: #fff;
     }
     li {
       width: 25%;
@@ -121,7 +122,7 @@ const HeaderContainer = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    height: 140px;
+    height: 160px;
     background: #fff;
     ul {
       width: 100%;
