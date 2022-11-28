@@ -10,16 +10,7 @@ import slide_4 from '../assets/images/slide_4.jpg';
 import slide_5 from '../assets/images/slide_5.jpg';
 import { sliderSetting } from '../pages/Main';
 
-// interface propsType = {
-//   dots?: boolean;
-//   arrow?: boolean;
-//   infinite?: boolean;
-//   speed?: number;
-//   slidesToShow?: number;
-//   slidesToScroll?: number;
-//   autoplay?: boolean;
-//   autoplaySpeed?: number;
-// }
+
 function Sliders({ dots, arrow, infinite, speed, slidesToScroll, slidesToShow }: sliderSetting) {
   const settings = {
     dots: dots,
