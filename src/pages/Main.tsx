@@ -1,4 +1,4 @@
-import Slider from 'react-slick';
+import Sliders from '../components/Sliders';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -9,6 +9,16 @@ import slide_3 from '../assets/images/slide_3.jpg';
 import slide_4 from '../assets/images/slide_4.jpg';
 import slide_5 from '../assets/images/slide_5.jpg';
 
+export interface sliderSetting {
+  dots: boolean;
+  arrow?: boolean;
+  infinite?: boolean;
+  speed?: number;
+  slidesToShow?: number;
+  slidesToScroll?: number;
+  autoplay?: boolean;
+  autoplaySpeed?: number;
+}
 function Main() {
   const settings = {
     dots: true,
@@ -24,17 +34,14 @@ function Main() {
 
   return (
     <MainContainer>
-      <Slider {...settings}>
-        {imgList.map((data, idx) => {
-          return (
-            <div key={idx}>
-              <h3>
-                <img src={data} />
-              </h3>
-            </div>
-          );
-        })}
-      </Slider>
+      <Sliders
+        dots={settings.dots}
+        arrow={settings.arrow}
+        infinite={settings.infinite}
+        speed={settings.speed}
+        slidesToShow={settings.slidesToShow}
+        slidesToScroll={settings.slidesToScroll}
+      />
     </MainContainer>
   );
 }
