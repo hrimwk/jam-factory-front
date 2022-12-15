@@ -13,6 +13,10 @@ export interface sliderSetting {
   autoplay?: boolean;
   autoplaySpeed?: number;
 }
+interface metaBackground {
+  backUrl: string;
+  hoverUrl: string;
+}
 function Main() {
   const settings = {
     dots: true,
