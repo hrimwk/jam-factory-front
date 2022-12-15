@@ -1,12 +1,7 @@
 import Sliders from '../components/Sliders';
 import styled from 'styled-components';
 
-import meta_1 from '../assets/images/meta_1.png';
-import metaHover_1 from '../assets/images/meta_1_2.png';
-import meta_2 from '../assets/images/meta_2.png';
-import metaHover_2 from '../assets/images/meta_2_2.png';
-import meta_3 from '../assets/images/meta_3.png';
-import metaHover_3 from '../assets/images/meta_3_2.png';
+import { metaBackground, metaList } from '../assets/utils/main/metaList';
 
 export interface sliderSetting {
   dots: boolean;
@@ -17,10 +12,6 @@ export interface sliderSetting {
   slidesToScroll?: number;
   autoplay?: boolean;
   autoplaySpeed?: number;
-}
-interface metaBackground {
-  backUrl: string;
-  hoverUrl: string;
 }
 function Main() {
   const settings = {
@@ -33,11 +24,7 @@ function Main() {
     // autoplay: true,
     // autoplaySpeed: 3000,
   };
-  const metaList = [
-    { backgroundUrl: meta_1, hoverUrl: metaHover_1, content: 'TRUTHFUL' },
-    { backgroundUrl: meta_2, hoverUrl: metaHover_2, content: 'SINCERITY' },
-    { backgroundUrl: meta_3, hoverUrl: metaHover_3, content: 'HEALTHY' },
-  ];
+
   return (
     <MainContainer>
       <Sliders

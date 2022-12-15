@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo_1 from '../assets/images/logo_1.png';
-import { navList } from '../assets/utils/navList';
+import { navList } from '../assets/utils/main/navList';
 import Login from './login/Login';
 import Modal from './modal/Modal';
 
