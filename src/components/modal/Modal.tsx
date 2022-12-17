@@ -1,23 +1,40 @@
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface propsType {
   visible: boolean;
   modalIn?: JSX.Element;
+  setVisible: (data: boolean) => void;
 }
-function Modal({ visible, modalIn }: propsType) {
+function Modal({ visible, modalIn, setVisible }: propsType) {
+  // const [modal, setModal] = useState(false);
+  const node = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const clickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (visible && node.current && !node.current.contains(target)) {
+        setVisible(false);
+      }
+    };
+    document.addEventListener('mousedown', clickOutside);
+    return () => {
+      document.removeEventListener('mousedown', clickOutside);
+    };
+  }, [visible]);
+
   return (
     <>
       <ModalOverlay visible={visible} />
       <ModalWrapper visible={visible}>
-        <ModalInner>{modalIn}</ModalInner>
+        <ModalInner ref={node}>{modalIn}</ModalInner>
       </ModalWrapper>
     </>
   );
 }
 
 const ModalOverlay = styled.div`
-  box-sizing: border-box;
-  display: ${(props: propsType) => (props.visible ? 'block' : 'none')};
+  display: ${({ visible }: { visible: boolean }) => (visible ? 'block' : 'none')};
   position: fixed;
   top: 0;
   left: 0;
@@ -28,8 +45,7 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  box-sizing: border-box;
-  display: ${(props: propsType) => (props.visible ? 'block' : 'none')};
+  display: ${({ visible }: { visible: boolean }) => (visible ? 'block' : 'none')};
   position: fixed;
   top: 0;
   right: 0;

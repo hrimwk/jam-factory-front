@@ -9,7 +9,9 @@ import Modal from './modal/Modal';
 function Header() {
   const [visible, setVisible] = useState<boolean>(false);
   const login = <Login />;
-
+  function clickModal() {
+    setVisible(true);
+  }
   return (
     <>
       <HeaderContainer>
@@ -23,9 +25,11 @@ function Header() {
           </div>
           <div className="login-area">
             <span className="join ft-12">Join</span>
-            <span className="login ft-12">Login</span>
+            <span className="login ft-12" onClick={clickModal}>
+              Login
+            </span>
           </div>
-          <Modal visible={visible} modalIn={login} />
+          <Modal visible={visible} setVisible={setVisible} modalIn={login} />
         </div>
         <nav className="menu-wrap">
           <ul className="menu-depth1">
@@ -79,10 +83,12 @@ const HeaderContainer = styled.div`
   .join {
     color: ${(props) => props.theme.colors.mainBrown};
     margin-right: 10px;
+    cursor: pointer;
   }
 
   .login {
     color: ${(props) => props.theme.colors.mainBrown};
+    cursor: pointer;
   }
 
   .login-area {
