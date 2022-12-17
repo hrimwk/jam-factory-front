@@ -1,7 +1,7 @@
 import Sliders from '../components/Sliders';
 import styled from 'styled-components';
 
-import { metaBackground, metaList } from '../assets/utils/main/metaList';
+import { metaList } from '../assets/utils/main/metaList';
 
 export interface sliderSetting {
   dots: boolean;

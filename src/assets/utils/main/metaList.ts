@@ -5,16 +5,6 @@ import metaHover_2 from '../../images/meta_2_2.png';
 import meta_3 from '../../images/meta_3.png';
 import metaHover_3 from '../../images/meta_3_2.png';
 
-export interface sliderSetting {
-  dots: boolean;
-  arrow?: boolean;
-  infinite?: boolean;
-  speed?: number;
-  slidesToShow?: number;
-  slidesToScroll?: number;
-  autoplay?: boolean;
-  autoplaySpeed?: number;
-}
 export interface metaBackground {
   backUrl: string;
   hoverUrl: string;
