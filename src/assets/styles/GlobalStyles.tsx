@@ -11,12 +11,16 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     a {
-	text-decoration: none;
-}
+	  text-decoration: none;
+    }
 
     body{
       font-family: 'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic', sans-serif;
       font-weight: 400;
+      -ms-overflow-style: none;
+    };
+    ::-webkit-scrollbar{
+        display: none;
     }
     input, textarea { 
       -moz-user-select: auto;
@@ -30,18 +34,21 @@ const GlobalStyles = createGlobalStyle`
     img{
       width: 100%;
     }
+    .container{
+    padding-top: 170px;
+    }
     .d-flex{
       display: flex;
     }
     .ft-12 {
     font-size: 12px;
-  }
+    }
   .ft-14 {
     font-size: 14px;
-  }
- .ml-10{
+    }
+   .ml-10{
   margin-left: 10px;
- }
+    }
 `;
 
 export default GlobalStyles;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo_1 from '../assets/images/logo_1.png';
 import { navList } from '../assets/utils/main/navList';
@@ -8,9 +8,13 @@ import Modal from './modal/Modal';
 
 function Header() {
   const [visible, setVisible] = useState<boolean>(false);
+  const navigate = useNavigate();
   const login = <Login />;
   function clickModal() {
     setVisible(true);
+  }
+  function clickSignup() {
+    navigate('/signup');
   }
   return (
     <>
@@ -24,7 +28,9 @@ function Header() {
             </div>
           </div>
           <div className="login-area">
-            <span className="join ft-12">Join</span>
+            <span className="join ft-12" onClick={clickSignup}>
+              signup
+            </span>
             <span className="login ft-12" onClick={clickModal}>
               Login
             </span>

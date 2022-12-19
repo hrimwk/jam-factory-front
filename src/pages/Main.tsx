@@ -30,7 +30,7 @@ function Main() {
   };
 
   return (
-    <MainContainer>
+    <MainContainer className="container">
       <Sliders
         dots={settings.dots}
         arrow={settings.arrow}
@@ -65,8 +65,6 @@ function Main() {
   );
 }
 const MainContainer = styled.div`
-  margin-top: 170px;
-
   .meta-icon-area {
     text-align: center;
     margin: 10% 20%;
