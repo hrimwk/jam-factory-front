@@ -19,7 +19,7 @@ const navList = [
     ],
   },
   {
-    link: '/product',
+    link: '/products',
     name: 'PRODUCT',
     class: 'sub3',
     subNav: [
