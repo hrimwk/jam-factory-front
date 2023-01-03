@@ -15,9 +15,9 @@ function StepIcon() {
   return (
     <StepIconContainer>
       <div className="join">
-        {ICON_LIST.map((data) => {
+        {ICON_LIST.map((data, idx) => {
           return (
-            <div className={data.class}>
+            <div className={data.class} key={idx}>
               <img src={data.src} alt="가입약관" />
               {data.span && <span>{data.span}</span>}
             </div>
