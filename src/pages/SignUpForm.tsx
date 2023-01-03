@@ -118,7 +118,6 @@ const SignUpFormContainer = styled.div`
     border-radius: 5px;
     text-align: center;
     color: #fff;
-    width: 80px;
   }
   .cr_red {
     font-size: 10px;
