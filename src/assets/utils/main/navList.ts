@@ -33,9 +33,9 @@ const navList = [
     name: 'NOTICE',
     class: 'sub4',
     subNav: [
-      { name: '공지사항', link: '/' },
-      { name: '이벤트', link: '/' },
-      { name: 'Q&A', link: '/' },
+      { name: '공지사항', link: 'notice' },
+      { name: '이벤트', link: '/event' },
+      { name: 'Q&A', link: '/qna' },
     ],
   },
 ];
