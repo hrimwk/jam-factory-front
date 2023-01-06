@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import Notice from './pages/Notice';
 import Events from './pages/Events';
 import SignUpForm from './pages/SignUpForm';
+import QnA from './pages/QnA';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/products" element={<Products />}></Route>
           <Route path="/notice" element={<Notice />}></Route>
           <Route path="/events" element={<Events />}></Route>
+          <Route path="/qna" element={<QnA />}></Route>
         </Routes>
         <Footer />
       </ThemeProvider>
