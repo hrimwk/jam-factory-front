@@ -4,9 +4,9 @@ const navList = [
     name: 'ABOUT US',
     class: 'sub1',
     subNav: [
-      { name: '대상에프앤비', link: '/' },
-      { name: '연혁', link: '/' },
-      { name: '주요사업', link: '/' },
+      { name: '대상에프앤비', link: '/daesang' },
+      { name: '연혁', link: '/history' },
+      { name: '주요사업', link: '/bussiness' },
     ],
   },
   {
@@ -14,8 +14,8 @@ const navList = [
     name: 'BRAND',
     class: 'sub2',
     subNav: [
-      { name: '복음자리', link: '/' },
-      { name: '로즈버드', link: '/' },
+      { name: '복음자리', link: '/bokumjari' },
+      { name: '로즈버드', link: '/rosebud' },
     ],
   },
   {
