@@ -12,6 +12,7 @@ import Notice from './pages/Notice';
 import Events from './pages/Events';
 import SignUpForm from './pages/SignUpForm';
 import QnA from './pages/QnA';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/notice" element={<Notice />}></Route>
           <Route path="/events" element={<Events />}></Route>
           <Route path="/qna" element={<QnA />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
       </ThemeProvider>
