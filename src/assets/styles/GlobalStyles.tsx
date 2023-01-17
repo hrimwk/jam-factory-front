@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
     }
     .container{
-    padding-top: 170px;
+    padding: 200px 0 80px;
     }
     .d-flex{
       display: flex;
