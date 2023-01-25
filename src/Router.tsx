@@ -13,6 +13,7 @@ import Events from './pages/Events';
 import SignUpForm from './pages/SignUpForm';
 import QnA from './pages/QnA';
 import NotFound from './pages/NotFound';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/signup/form" element={<SignUpForm />}></Route>
           <Route path="/products" element={<Products />}></Route>
+          <Route path="/detail" element={<Detail />}></Route>
           <Route path="/notice" element={<Notice />}></Route>
           <Route path="/events" element={<Events />}></Route>
           <Route path="/qna" element={<QnA />}></Route>
