@@ -7,6 +7,7 @@ const colors = {
   subGray: '#999690',
   darkGray: '#21211a',
   pointRed: '#9a131a',
+  lightGray: '#ddd',
 };
 
 const fontSize = {};
