@@ -142,7 +142,7 @@ const DetailContainer = styled.div`
       color: #fff;
       background: ${({ theme }) => theme.colors.mainBrown};
     }
-  }
+}
   .tab {
     overflow: hidden;
     ul {
