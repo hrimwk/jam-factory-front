@@ -167,6 +167,30 @@ const DetailContainer = styled.div`
     border-bottom: 0px;
     background: #fff !important;
   }
+  .tab {
+    overflow: hidden;
+    ul {
+      display: flex;
+    }
+    li {
+      flex: 1 1 25%;
+      padding: 15px 10px;
+      text-align: center;
+      background: ${({ theme }) => theme.colors.lightGray};
+      cursor: pointer;
+    }
+    .content {
+      min-height: 500px;
+      border: 1px solid ${({ theme }) => theme.colors.lightGray};
+      border-top: 0px;
+    }
+  }
+  .active {
+    font-weight: bold;
+    border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border-bottom: 0px;
+    background: #fff !important;
+  }
 `;
 
 export default Detail;
