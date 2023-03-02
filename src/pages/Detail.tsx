@@ -6,7 +6,14 @@ import productImg from '../assets/images/jam_12.jpeg';
 function Detail() {
   const [amount, setAmount] = useState(0);
   const [index, setTabIndex] = useState('1');
+  const [index, setTabIndex] = useState('1');
   const price = 3880;
+  const TAB_LIST = [
+    { id: '1', name: '상품 상세', content: '' },
+    { id: '2', name: '상품 후기', content: '' },
+    { id: '3', name: '문의', content: '' },
+    { id: '4', name: '배송/교환/반품', content: '' },
+  ];
   const TAB_LIST = [
     { id: '1', name: '상품 상세', content: '' },
     { id: '2', name: '상품 후기', content: '' },
@@ -15,6 +22,9 @@ function Detail() {
   ];
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(Number(e.target.value));
+  };
+  const clickTab = (e: React.MouseEvent) => {
+    setTabIndex(e.currentTarget.id);
   };
   const clickTab = (e: React.MouseEvent) => {
     setTabIndex(e.currentTarget.id);
@@ -32,6 +42,8 @@ function Detail() {
           <p className="delivery-fee">배송비 3,000원 (30,000원 이상 구매시 무료)</p>
           <div className="amount">
             <label>수량</label>
+            <input type="number" min="0" max="10" defaultValue="0" className="number" onChange={changeAmount} />
+            <span>최대 구매 수량 10개</span>
             <input type="number" min="0" max="10" defaultValue="0" className="number" onChange={changeAmount} />
             <span>최대 구매 수량 10개</span>
           </div>
@@ -58,15 +70,30 @@ function Detail() {
         </ul>
         <div className="content"></div>
       </section>
+      <section className="tab">
+        <ul>
+          {TAB_LIST.map((data) => {
+            return (
+              <li id={data.id} key={data.id} className={index === data.id ? 'active' : undefined} onClick={clickTab}>
+                {data.name}
+              </li>
+            );
+          })}
+        </ul>
+        <div className="content"></div>
+      </section>
     </DetailContainer>
   );
 }
 const DetailContainer = styled.div`
   width: 60%;
   margin: 0 auto;
+  width: 60%;
+  margin: 0 auto;
   .wrap {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
     margin-bottom: 80px;
   }
   .product-img {
@@ -93,6 +120,11 @@ const DetailContainer = styled.div`
     label {
       display: block;
       margin-bottom: 10px;
+    }
+    span {
+      margin-left: 10px;
+      font-size: 12px;
+      color: #999;
     }
     span {
       margin-left: 10px;
@@ -127,6 +159,7 @@ const DetailContainer = styled.div`
     gap: 10px;
     button {
       flex: 1 1 50%;
+      flex: 1 1 50%;
       padding: 10px;
       border-radius: 3px;
       border: none;
@@ -142,7 +175,7 @@ const DetailContainer = styled.div`
       color: #fff;
       background: ${({ theme }) => theme.colors.mainBrown};
     }
-}
+  }
   .tab {
     overflow: hidden;
     ul {
