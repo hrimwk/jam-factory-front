@@ -25,7 +25,6 @@ function Detail() {
         <div className="product-img">
           <img src={productImg} alt="" />
         </div>
-
         <div className="product-info">
           <p className="title">[복음자리] 딸기잼 230g </p>
           <p className="price">3,880원</p>
@@ -127,6 +126,7 @@ const DetailContainer = styled.div`
     gap: 10px;
     button {
       flex: 1 1 50%;
+      flex: 1 1 50%;
       padding: 10px;
       border-radius: 3px;
       border: none;
@@ -142,7 +142,7 @@ const DetailContainer = styled.div`
       color: #fff;
       background: ${({ theme }) => theme.colors.mainBrown};
     }
-}
+  }
   .tab {
     overflow: hidden;
     ul {
