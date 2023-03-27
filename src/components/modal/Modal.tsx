@@ -7,7 +7,6 @@ type propsType = {
   setVisible: (data: boolean) => void;
 };
 function Modal({ visible, modalIn, setVisible }: propsType) {
-  // const [modal, setModal] = useState(false);
   const node = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,8 +26,16 @@ function Modal({ visible, modalIn, setVisible }: propsType) {
     <>
       <ModalOverlay visible={visible} />
       <ModalWrapper visible={visible}>
-        <ModalInner ref={node}>{modalIn}</ModalInner>
-        <div className="close">x</div>
+        <ModalInner ref={node}>
+          {modalIn}
+          <div
+            className="close"
+            onClick={() => {
+              setVisible(false);
+            }}>
+            x
+          </div>
+        </ModalInner>
       </ModalWrapper>
     </>
   );
@@ -57,9 +64,10 @@ const ModalWrapper = styled.div`
   outline: 0;
   .close {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 15px;
+    top: 15px;
     color: ${(props) => props.theme.colors.mainBrown};
+    cursor: pointer;
   }
 `;
 const ModalInner = styled.div`
