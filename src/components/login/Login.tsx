@@ -1,30 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import logo_1 from '../../assets/images/logo_1.png';
 
 function Login() {
-  const snsIcon = [
-    {
-      id: '1',
-      link: '/',
-      src: '../../src/assets/images/login_sns1.png',
-    },
-    {
-      id: '2',
-      link: '/',
-      src: '../../src/assets/images/login_sns2.png',
-    },
-    {
-      id: '3',
-      link: '/',
-      src: '../../src/assets/images/login_sns3.png',
-    },
-    {
-      id: '4',
-      link: '/',
-      src: '../../src/assets/images/login_sns4.png',
-    },
-  ];
+  const navigate = useNavigate();
+  const toSignup = () => {
+    navigate('/signup');
+  };
   return (
     <LoginWrapper>
       <div className="modal-inner">
@@ -36,31 +18,16 @@ function Login() {
           <form>
             <input type="text" className="login-input" placeholder="아이디" required />
             <input type="password" className="login-input" placeholder="비밀번호" required />
-
             <button className="login-button" type="submit">
               login
             </button>
           </form>
-
-          <legend>SNS 로그인</legend>
-          <ul className="sns-login">
-            {snsIcon.map((data) => {
-              return (
-                <li key={data.id}>
-                  <Link to={data.link}>
-                    <SnsIcon src={data.src} />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
           <p className="join-question">
             아직 회원이 아니신가요?
-            <span className="ml-10">
-              <Link to="/">회원가입</Link>
+            <span className="ml-10" onClick={toSignup}>
+              회원가입
             </span>
           </p>
-          <div className="close">Close</div>
         </div>
       </div>
     </LoginWrapper>
@@ -101,26 +68,7 @@ const LoginWrapper = styled.div`
     color: #fff;
     background: ${(props) => props.theme.colors.mainBrown};
   }
-  .close {
-    position: absolute;
-    right: -16px;
-    top: -16px;
-  }
-  .close:after {
-    content: 'x';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    line-height: 32px;
-    color: #fff;
-    font-weight: 800;
-    background: ${(props) => props.theme.colors.mainBrown};
-    border: 2px solid ${(props) => props.theme.colors.subIvory};
-    border-radius: 50%;
-  }
+
   .sns-login {
     display: flex;
     justify-content: space-around;
@@ -131,10 +79,11 @@ const LoginWrapper = styled.div`
     color: ${(props) => props.theme.colors.subBrown};
     text-align: center;
   }
-  .join-question span a {
+  .join-question span {
     color: ${(props) => props.theme.colors.subBrown};
     text-decoration: underline;
     font-weight: bold;
+    cursor: pointer;
   }
 `;
 const SnsIcon = styled.span`

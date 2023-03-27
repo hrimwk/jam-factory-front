@@ -1,13 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-interface propsType {
+type propsType = {
   visible: boolean;
   modalIn?: JSX.Element;
   setVisible: (data: boolean) => void;
-}
+};
 function Modal({ visible, modalIn, setVisible }: propsType) {
-  // const [modal, setModal] = useState(false);
   const node = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,7 +26,16 @@ function Modal({ visible, modalIn, setVisible }: propsType) {
     <>
       <ModalOverlay visible={visible} />
       <ModalWrapper visible={visible}>
-        <ModalInner ref={node}>{modalIn}</ModalInner>
+        <ModalInner ref={node}>
+          {modalIn}
+          <div
+            className="close"
+            onClick={() => {
+              setVisible(false);
+            }}>
+            x
+          </div>
+        </ModalInner>
       </ModalWrapper>
     </>
   );
@@ -54,6 +62,13 @@ const ModalWrapper = styled.div`
   z-index: 1000;
   overflow: auto;
   outline: 0;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: ${(props) => props.theme.colors.mainBrown};
+    cursor: pointer;
+  }
 `;
 const ModalInner = styled.div`
   position: relative;
